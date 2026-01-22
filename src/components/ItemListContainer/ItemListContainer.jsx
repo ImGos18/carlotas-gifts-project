@@ -40,7 +40,7 @@ export default function ItemListContainer() {
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(setItems(items));
-      }, 20);
+      }, 2000);
     });
   }
 
