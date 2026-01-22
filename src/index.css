@@ -2,34 +2,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "roboto";
-}
 
-.nav-primary {
-  background-color: black;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-primary img {
-  width: 12rem;
-  padding-left: 1.5rem;
-}
-
-.nav-primary i {
-  color: #fff;
-  font-size: 3rem;
-  margin-right: 1.7rem;
-  cursor: pointer;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 /*Item List Container*/
 
 .message {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 30px;
@@ -37,34 +20,4 @@
   padding: 40px;
   background-color: #d1ccdc;
   border-radius: 20px;
-}
-
-.item-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1.5rem;
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  border: 1px solid grey;
-  padding: 30px;
-}
-
-.item img {
-  width: 20rem;
-}
-
-.item p {
-  align-self: center;
-  font-size: 30px;
-  font-weight: 800;
-}
-
-.item span {
-  margin-top: 3rem;
-  font-weight: 1000;
-  font-size: 2rem;
 }

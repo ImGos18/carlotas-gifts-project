@@ -1,0 +1,71 @@
+.modalBg {
+  background-color: rgba(0, 0, 0, 0.514);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  top: 0;
+  z-index: 100000;
+}
+
+.modalWindow {
+  position: fixed;
+  left: 50%;
+  width: 30vw;
+  height: 80vh;
+  top: 40%;
+  background-color: #fff;
+  transform: translateY(-40%) translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 10000000;
+}
+
+.modalWindow .imgContainer {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.modalWindow .imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  align-self: center;
+  transition: all 400ms;
+}
+
+.modalWindow .info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.modalWindow .info .price {
+  color: #ee2b6c;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.modalWindow .info .name {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.modalWindow .description {
+  text-align: center;
+}
+
+.testBtn {
+  align-self: center;
+  justify-self: center;
+  background-color: #ee2b6c;
+  color: #fff;
+  border-style: none;
+  width: 200px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 50px;
+  cursor: pointer;
+}

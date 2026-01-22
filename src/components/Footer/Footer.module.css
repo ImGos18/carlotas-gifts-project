@@ -1,0 +1,17 @@
+.footer {
+  position: sticky;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 99vw;
+  background-color: #fff;
+  color: lightgray;
+}
+
+.footer .footerImg {
+  width: 8rem;
+  justify-self: flex-start;
+}
