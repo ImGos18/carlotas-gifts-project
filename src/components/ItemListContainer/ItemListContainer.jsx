@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import Item from "../Item/Item";
 import styles from "./ItemListContainer.module.css";
 import DetailsModal from "../DetailsModal/DetailsModal";
+import { useStoreContext } from "../../context/StoreContext";
 
 const items = [
   {
@@ -53,28 +54,11 @@ const items = [
 
 export default function ItemListContainer() {
   const [itemsList, setItems] = useState([]);
-  const [modalDesc, setModalDesc] = useState(null);
-  const [cartItems, setCartItems] = useState([]);
   const [searchParams] = useSearchParams();
   const filter = searchParams.get("filter");
 
-  function handleOpenModal(item) {
-    setModalDesc(item);
-  }
-
-  function handleCloseModal() {
-    setModalDesc(null);
-  }
-
-  function handleAddToCart(item) {
-    setCartItems((cartItems) => [...cartItems, item]);
-    handleCloseModal();
-    Swal.fire({
-      icon: "success",
-      title: "item added to cart",
-    });
-    console.log(cartItems);
-  }
+  const { modalDesc, handleOpenModal, handleCloseModal, handleAddToCart } =
+    useStoreContext();
 
   useEffect(function () {
     const id = setTimeout(() => {
