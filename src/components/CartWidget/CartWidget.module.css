@@ -1,0 +1,6 @@
+.cart {
+  font-size: 40px;
+}
+.cart::after {
+  content: "1";
+}

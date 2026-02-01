@@ -1,6 +1,4 @@
 .footer {
-  position: sticky;
-  bottom: 0%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -9,9 +7,12 @@
   width: 99vw;
   background-color: #fff;
   color: lightgray;
+  height: 5rem;
+  position: fixed;
+  bottom: 0%;
 }
 
 .footer .footerImg {
-  width: 8rem;
+  width: 5rem;
   justify-self: flex-start;
 }

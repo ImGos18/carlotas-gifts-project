@@ -1,5 +1,12 @@
 .itemContainer {
   display: flex;
   justify-content: space-around;
-  margin-top: 1.5rem;
+  padding-top: 20px;
+  height: 100%;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 10%;
+  margin-left: 1px solid red;
+  overflow-y: scroll;
+  padding-bottom: 200px;
 }

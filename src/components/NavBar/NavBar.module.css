@@ -1,4 +1,4 @@
-.nav-primary {
+.navPrimary {
   background-color: white;
   /* padding-top: 1.5rem; */
   /* padding-bottom: 1.5rem; */
@@ -9,39 +9,42 @@
   border-bottom: 0.5px solid lightgray;
 }
 
-.nav-logo {
+.navLogo {
   width: 10rem;
   padding-left: 1.5rem;
 }
 
-.link-list {
+.linkList {
   list-style-type: none;
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-.link-item {
+.linkItem {
   cursor: pointer;
   color: grey;
+  text-decoration: none;
 }
 
-.link-item:hover {
+.linkItem:hover {
   color: #ee2b6c;
 }
 
-.link-item.active {
+.linkItem:global(.active) {
   color: #ee2b6c;
   font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 20%;
 }
 
-.cart-profile {
+.cartProfile {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.cart-button {
+.cartButton {
   color: black;
   font-size: 1.5rem;
   background-color: #f3e7eb;
@@ -50,7 +53,7 @@
   cursor: pointer;
 }
 
-.profile-button {
+.profileButton {
   font-size: 1.5rem;
   cursor: pointer;
 }

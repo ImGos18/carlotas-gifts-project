@@ -1,19 +1,26 @@
+import { NavLink } from "react-router";
 import CartWidget from "../CartWidget/CartWidget";
-import "./NavBar.css";
-
+import styles from "./NavBar.module.css";
 export default function NavBar({ onToggleCart }) {
   return (
-    <nav className="nav-primary">
-      <img src="/carlotagifts-logo.png" alt="" className="nav-logo" />
-      <ul className="link-list">
-        <li className="link-item active">Home</li>
-        <li className="link-item">Catalog</li>
-        <li className="link-item">Occasions</li>
-        <li className="link-item">About</li>
+    <nav className={styles.navPrimary}>
+      <NavLink to={"/"}>
+        <img src="/carlotagifts-logo.png" alt="" className={styles.navLogo} />
+      </NavLink>
+      <ul className={styles.linkList}>
+        <NavLink to={"/"} className={styles.linkItem}>
+          Home
+        </NavLink>
+        <NavLink to={"/Catalog?filter=all-gifts"} className={styles.linkItem}>
+          Catalog
+        </NavLink>
+        <NavLink to={"/About"} className={styles.linkItem}>
+          About
+        </NavLink>
       </ul>
-      <div className="cart-profile">
+      <div className={styles.cartProfile}>
         <CartWidget onToggleCart={onToggleCart} />
-        <i class="bi bi-person-circle profile-button"></i>
+        <i className="bi bi-person-circle profile-button"></i>
       </div>
     </nav>
   );

@@ -1,0 +1,10 @@
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.categoryNav {
+  text-decoration: none;
+}

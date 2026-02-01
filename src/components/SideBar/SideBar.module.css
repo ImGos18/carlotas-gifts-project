@@ -1,0 +1,10 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: center;
+}
+
+.sideBar .titleFilter {
+  margin-bottom: 30px;
+}
