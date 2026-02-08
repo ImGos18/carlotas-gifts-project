@@ -1,5 +1,4 @@
 import Footer from "../../components/Footer/Footer";
-import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
 import NavBar from "../../components/NavBar/NavBar";
 import styles from "./HomePage.module.css";
 

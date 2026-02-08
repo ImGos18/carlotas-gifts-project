@@ -6,74 +6,32 @@ import Item from "../Item/Item";
 import styles from "./ItemListContainer.module.css";
 import DetailsModal from "../DetailsModal/DetailsModal";
 import { useStoreContext } from "../../context/StoreContext";
-
-const items = [
-  {
-    imgSrc:
-      "https://images.unsplash.com/photo-1648959855748-aa385fca0f68?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "flor 1",
-    price: "30$",
-    category: "flower",
-  },
-  {
-    imgSrc:
-      "https://plus.unsplash.com/premium_photo-1669997826684-785d9039f547?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "flor 2",
-    price: "20$",
-    category: "flower",
-  },
-  {
-    imgSrc:
-      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "flor 3",
-    price: "10$",
-    category: "flower",
-  },
-  {
-    imgSrc:
-      "https://plus.unsplash.com/premium_photo-1674068281258-7618321e30f0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "caja 1",
-    price: "30$",
-    category: "box",
-  },
-  {
-    imgSrc:
-      "https://images.unsplash.com/photo-1617118601021-4992c028fe5d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "caja 2",
-    price: "20$",
-    category: "box",
-  },
-  {
-    imgSrc:
-      "https://images.unsplash.com/photo-1575384043001-f37f48835528?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "caja 3",
-    price: "10$",
-    category: "box",
-  },
-]; //variable provisional
+import { getItems } from "../../firebase/firebase";
 
 export default function ItemListContainer() {
   const [itemsList, setItems] = useState([]);
   const [searchParams] = useSearchParams();
+
   const filter = searchParams.get("filter");
 
   const { modalDesc, handleOpenModal, handleCloseModal, handleAddToCart } =
     useStoreContext();
 
-  useEffect(function () {
-    const id = setTimeout(() => {
-      setItems(items);
-    }, 2000);
+  useEffect(
+    function () {
+      getItems().then((products) => setItems(products));
 
-    return () => clearTimeout(id);
-  }, []);
+      console.log(itemsList);
+    },
+    [itemsList],
+  );
 
   const filteredItems = useMemo(() => {
     if (!filter || filter === "all-gifts") return itemsList;
     if (filter === "flowers")
-      return itemsList.filter((item) => item.category === "flower");
+      return itemsList.filter((item) => item.categoriaProducto === "flor");
     if (filter === "gift-boxes")
-      return itemsList.filter((item) => item.category === "box");
+      return itemsList.filter((item) => item.categoriaProducto === "caja");
   }, [filter, itemsList]);
 
   return (
