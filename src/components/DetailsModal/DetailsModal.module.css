@@ -20,6 +20,7 @@
   flex-direction: column;
   gap: 30px;
   z-index: 10000000;
+  padding-bottom: 2rem;
 }
 
 .modalWindow .imgContainer {
@@ -56,7 +57,14 @@
   text-align: center;
 }
 
-.testBtn {
+.modalWindow .message {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: gray;
+}
+
+.closeBtn {
   align-self: center;
   justify-self: center;
   background-color: #ee2b6c;

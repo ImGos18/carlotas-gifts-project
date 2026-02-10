@@ -1,6 +1,12 @@
 import styles from "./NumOrderedItems.module.css";
 
-function NumOrderedItems({ item, onUpdateItemCount, itemCount, onAdditem }) {
+function NumOrderedItems({
+  item,
+  onUpdateItemCount,
+  itemCount,
+  onAdditem,
+  isInCart,
+}) {
   return (
     <div className={styles.itemCountDiv}>
       <div className={styles.inputCountItem}>
@@ -28,7 +34,7 @@ function NumOrderedItems({ item, onUpdateItemCount, itemCount, onAdditem }) {
         onClick={() => onAdditem({ ...item, qty: itemCount })}
         disabled={itemCount <= 0}
       >
-        Agregar al Carrito
+        {isInCart ? "Modificar Cantidad" : "Agregar al Carrito"}
       </button>
     </div>
   );

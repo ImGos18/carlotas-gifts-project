@@ -21,7 +21,7 @@ async function getItems() {
   const querySnapShot = await getDocs(collection(db, "productos"));
   const arr = [];
 
-  querySnapShot.forEach((prod) => arr.push(prod.data()));
+  querySnapShot.forEach((prod) => arr.push({ id: prod.id, ...prod.data() }));
 
   return arr;
 }

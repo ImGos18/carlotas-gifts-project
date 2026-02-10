@@ -1,29 +1,29 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { SpinnerCircularFixed } from "spinners-react";
 import { useSearchParams } from "react-router";
-import Swal from "sweetalert2";
 import Item from "../Item/Item";
 import styles from "./ItemListContainer.module.css";
 import DetailsModal from "../DetailsModal/DetailsModal";
 import { useStoreContext } from "../../context/StoreContext";
-import { getItems } from "../../firebase/firebase";
 
 export default function ItemListContainer() {
-  const [itemsList, setItems] = useState([]);
   const [searchParams] = useSearchParams();
-
   const filter = searchParams.get("filter");
 
-  const { modalDesc, handleOpenModal, handleCloseModal, handleAddToCart } =
-    useStoreContext();
+  const {
+    modalDesc,
+    handleOpenModal,
+    handleCloseModal,
+    handleAddToCart,
+    itemsList,
+    getItemsDb,
+  } = useStoreContext();
 
   useEffect(
     function () {
-      getItems().then((products) => setItems(products));
-
-      console.log(itemsList);
+      getItemsDb();
     },
-    [itemsList],
+    [getItemsDb],
   );
 
   const filteredItems = useMemo(() => {
@@ -57,6 +57,7 @@ export default function ItemListContainer() {
           item={modalDesc}
           onCloseModal={handleCloseModal}
           onAddItem={handleAddToCart}
+          key={modalDesc.id}
         />
       )}
     </>

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import CartWidget from "../CartWidget/CartWidget";
 import styles from "./NavBar.module.css";
-export default function NavBar({ onToggleCart }) {
+export default function NavBar() {
   return (
     <nav className={styles.navPrimary}>
       <NavLink to={"/"}>
@@ -19,8 +19,7 @@ export default function NavBar({ onToggleCart }) {
         </NavLink>
       </ul>
       <div className={styles.cartProfile}>
-        <CartWidget onToggleCart={onToggleCart} />
-        <i className="bi bi-person-circle profile-button"></i>
+        <CartWidget />
       </div>
     </nav>
   );

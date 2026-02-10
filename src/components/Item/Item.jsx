@@ -1,12 +1,14 @@
 import styles from "./Item.module.css";
 
 export default function Item({ item, onOpenModal }) {
-  console.log(item);
-
   return (
     <li className={styles.item}>
       <div className={styles.imgContainer}>
-        <img src={item.img} alt="product img" />
+        <img
+          src={item.img}
+          alt="product img"
+          onClick={() => onOpenModal(item)}
+        />
       </div>
       <p>{item.nombreProducto}</p>
       <span>{item.precioProducto}</span>

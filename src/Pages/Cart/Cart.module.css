@@ -1,0 +1,12 @@
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 40px auto;
+  padding-bottom: 4rem;
+}
+
+.cartContainer .table {
+  width: 80%;
+  margin: 0 auto;
+}

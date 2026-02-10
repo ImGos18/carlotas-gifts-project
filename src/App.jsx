@@ -5,6 +5,7 @@ import Catalog from "./Pages/Catalog/Catalog";
 import About from "./Pages/About/About";
 import NotFound from "./Pages/NotFound/NotFound";
 import { StoreContextProvider } from "./context/StoreContext";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
   return (
@@ -13,10 +14,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<HomePage />} />
-            <Route path={"/Catalog"} element={<Catalog />}>
-              <Route path="Catalog/:id" />
-            </Route>
+            <Route path={"/Catalog"} element={<Catalog />}></Route>
             <Route path="/About" element={<About />} />
+            <Route path="/Cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

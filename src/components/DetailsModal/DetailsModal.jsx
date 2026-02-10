@@ -1,9 +1,20 @@
 import { useEffect, useState } from "react";
 import styles from "./DetailsModal.module.css";
 import NumOrderedItems from "../NumOrderedItems/NumOrderedItems";
+import { useStoreContext } from "../../context/StoreContext";
 
 function DetailsModal({ item, onCloseModal, onAddItem }) {
-  const [itemCount, setItemCount] = useState(0);
+  const { itemsList, cartItems } = useStoreContext();
+  const isInCart = cartItems.some((cartItem) => cartItem.id === item.id);
+  const [itemCount, setItemCount] = useState(function () {
+    if (isInCart) {
+      return cartItems.at(
+        cartItems.findIndex((cartItem) => cartItem.id === item.id),
+      )?.qty;
+    } else {
+      return 0;
+    }
+  });
   function handleUpdateItem(operation) {
     if (operation === "substract" && itemCount > 0)
       setItemCount((count) => count - 1);
@@ -25,6 +36,7 @@ function DetailsModal({ item, onCloseModal, onAddItem }) {
     },
     [onCloseModal],
   );
+
   return (
     <>
       <div className={styles.modalBg} onClick={onCloseModal}></div>
@@ -44,10 +56,16 @@ function DetailsModal({ item, onCloseModal, onAddItem }) {
         <NumOrderedItems
           item={item}
           itemCount={itemCount}
+          isInCart={isInCart}
           onUpdateItemCount={handleUpdateItem}
           onAdditem={onAddItem}
         />
-        <button className={styles.testBtn} onClick={onCloseModal}>
+        <span className={styles.message}>
+          {cartItems.some((prod) => prod.id === item.id)
+            ? `ya tienes agregado ${cartItems.at(itemsList.findIndex((prod) => prod.id === item.id))?.qty} de este producto en el carrito`
+            : ""}
+        </span>
+        <button className={styles.closeBtn} onClick={onCloseModal}>
           Cerrar Detalles
         </button>
       </div>
