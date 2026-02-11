@@ -3,7 +3,7 @@ import { SpinnerCircularFixed } from "spinners-react";
 import { useSearchParams } from "react-router";
 import Item from "../Item/Item";
 import styles from "./ItemListContainer.module.css";
-import DetailsModal from "../DetailsModal/DetailsModal";
+// import DetailsModal from "../DetailsModal/DetailsModal";
 import { useStoreContext } from "../../context/StoreContext";
 
 export default function ItemListContainer() {
@@ -52,14 +52,14 @@ export default function ItemListContainer() {
         )}
       </ul>
 
-      {modalDesc && (
+      {/* {modalDesc && (
         <DetailsModal
           item={modalDesc}
           onCloseModal={handleCloseModal}
           onAddItem={handleAddToCart}
           key={modalDesc.id}
         />
-      )}
+      )} */}
     </>
   );
 }

@@ -27,6 +27,8 @@ function StoreContextProvider({ children }) {
         product.id === item.id ? { ...item, qty: item.qty } : { ...product },
       );
 
+      console.log(item);
+
       setCartItems(upDateQty);
 
       Swal.fire({
@@ -43,7 +45,7 @@ function StoreContextProvider({ children }) {
       });
     }
 
-    handleCloseModal();
+    // handleCloseModal();
   }
 
   function handleRemoveFromCart(item) {

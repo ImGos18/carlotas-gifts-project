@@ -6,6 +6,8 @@ import About from "./Pages/About/About";
 import NotFound from "./Pages/NotFound/NotFound";
 import { StoreContextProvider } from "./context/StoreContext";
 import Cart from "./Pages/Cart/Cart";
+import Item from "./components/Item/Item";
+import ItemView from "./components/ItemView/ItemView";
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<HomePage />} />
-            <Route path={"/Catalog"} element={<Catalog />}></Route>
+            <Route path={"/Catalog"} element={<Catalog />} />
+            <Route path="/Catalog/:id" element={<ItemView />} />
             <Route path="/About" element={<About />} />
             <Route path="/Cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />

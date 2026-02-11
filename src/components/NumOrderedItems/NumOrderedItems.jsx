@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import styles from "./NumOrderedItems.module.css";
 
 function NumOrderedItems({
@@ -7,6 +8,7 @@ function NumOrderedItems({
   onAdditem,
   isInCart,
 }) {
+  const navigate = useNavigate();
   return (
     <div className={styles.itemCountDiv}>
       <div className={styles.inputCountItem}>
@@ -31,7 +33,10 @@ function NumOrderedItems({
       </div>
       <button
         className={`${styles.addToCart} ${itemCount <= 0 ? "disabled" : ""}`}
-        onClick={() => onAdditem({ ...item, qty: itemCount })}
+        onClick={() => {
+          onAdditem({ ...item, qty: itemCount });
+          navigate("/Catalog");
+        }}
         disabled={itemCount <= 0}
       >
         {isInCart ? "Modificar Cantidad" : "Agregar al Carrito"}
