@@ -38,7 +38,6 @@ function ItemView() {
         .finally(() => {
           setIsLoading(false);
         });
-      console.log(cartItems.find((item) => item.id === id)?.qty);
     },
     [id, cartItems, navigate],
   );
@@ -75,6 +74,7 @@ function ItemView() {
               isInCart={isInCart}
               onUpdateItemCount={handleUpdateItem}
               onAdditem={handleAddToCart}
+              cantidad={item.cantidadDisponible}
             />
           </>
         )}

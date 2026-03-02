@@ -1,21 +1,23 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {
+  addDoc,
   collection,
   doc,
   getDoc,
   getDocs,
   getFirestore,
 } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAyV77Ck4NGlIqdLIN9ktipbAgLIx0qSnw",
-  authDomain: "carlotagifts-ed7ff.firebaseapp.com",
-  projectId: "carlotagifts-ed7ff",
-  storageBucket: "carlotagifts-ed7ff.firebasestorage.app",
-  messagingSenderId: "322084482310",
-  appId: "1:322084482310:web:266a34c641a79953680287",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
@@ -40,4 +42,23 @@ async function getSingleItem(id) {
   return { ...item, id: id };
 }
 
-export { getItems, getSingleItem };
+async function createInvoice(carrito, id, carritoPrecio) {
+  try {
+    const docRef = await addDoc(collection(db, "facturas"), {
+      idCompra: id,
+      precioTotal: carritoPrecio,
+      productos: [...carrito],
+    });
+
+    Swal.fire({
+      title: `Compra agendada`,
+      html: `Tu compra con id <b>${docRef.id}</b> ha sido agendada exitosamente, puedes seguir viendo mas de nuestros productos en el catalogo`,
+      icon: "success",
+      confirmButtonColor: "rgba(238, 43, 108, 0.633)",
+    });
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export { getItems, getSingleItem, createInvoice };

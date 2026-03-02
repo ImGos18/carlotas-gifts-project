@@ -3,6 +3,7 @@ import styles from "./Item.module.css";
 
 export default function Item({ item, onOpenModal }) {
   const id = item.id;
+
   return (
     <li className={styles.item}>
       <div className={styles.imgContainer}>
@@ -11,11 +12,12 @@ export default function Item({ item, onOpenModal }) {
             src={item.img}
             alt="product img"
             onClick={() => onOpenModal(item)}
+            className={`${item.cantidadDisponible <= 0 ? "disabled" : ""}`}
           />
         </Link>
       </div>
       <p>{item.nombreProducto}</p>
-      <span>{item.precioProducto}</span>
+      <span>Ref. {item.precioProducto}</span>
       <Link to={`/Catalog/${id}`}>
         <button className={styles.testBtn} onClick={() => onOpenModal(item)}>
           Ver Detalles

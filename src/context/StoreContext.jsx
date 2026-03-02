@@ -72,6 +72,10 @@ function StoreContextProvider({ children }) {
     });
   }
 
+  function handleDeleteCart() {
+    setCartItems([]);
+  }
+
   return (
     <StoreContext.Provider
       value={{
@@ -83,6 +87,7 @@ function StoreContextProvider({ children }) {
         modalDesc,
         getItemsDb,
         handleRemoveFromCart,
+        handleDeleteCart,
       }}
     >
       {children}

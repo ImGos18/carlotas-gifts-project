@@ -2,6 +2,8 @@
   font-size: 40px;
   cursor: pointer;
   text-decoration: none;
+
+  color: rgba(238, 43, 108, 0.633);
 }
 
 .cart:visited {

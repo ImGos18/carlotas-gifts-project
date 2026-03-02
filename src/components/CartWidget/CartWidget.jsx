@@ -6,10 +6,7 @@ export default function CartWidget() {
   const { cartItems } = useStoreContext();
   return (
     <Link className={styles.cart} to={"/Cart"}>
-      <i
-        className={`bi bi-cart3 cart-button ${styles.cart}`}
-        onClick={() => console.log(cartItems)}
-      >
+      <i className={`bi bi-basket3 cart-button ${styles.cart}`}>
         {cartItems.length > 0 && cartItems.length}
       </i>
     </Link>
