@@ -1,6 +1,12 @@
 import styles from "./ButtonCategory.module.css";
 
-function ButtonCategory({ category, icon, onCategory, searchParams }) {
+function ButtonCategory({
+  category,
+  icon,
+  onCategory,
+  searchParams,
+  nameCategory,
+}) {
   const active = searchParams.get("filter") === category.replace(" ", "-");
 
   return (
@@ -8,7 +14,7 @@ function ButtonCategory({ category, icon, onCategory, searchParams }) {
       className={`${styles.buttonCategory} ${active ? "active" : ""}`}
       onClick={() => onCategory(category)}
     >
-      <i className={icon}></i> {category}
+      <i className={icon}></i> {nameCategory}
     </div>
   );
 }

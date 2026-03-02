@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-email/components": "1.0.8",
     "bootstrap-icons": "^1.13.1",
     "firebase": "^12.9.0",
     "firebase-tools": "^15.5.1",
@@ -17,11 +18,13 @@
     "react-dom": "^19.2.4",
     "react-router": "^7.13.0",
     "react-router-dom": "^7.13.0",
+    "resend": "^6.9.2",
     "spinners-react": "^1.0.11",
     "sweetalert2": "^11.26.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@react-email/preview-server": "5.2.8",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
@@ -30,6 +33,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "react-email": "5.2.8",
     "vite": "^7.2.4"
   }
 }

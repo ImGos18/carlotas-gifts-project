@@ -13,15 +13,31 @@ function Cart() {
   return (
     <>
       <NavBar />
-      <div className={styles.cartContainer}>
-        <div>
-          <ul className={styles.table}>
-            {isItemsOnCart &&
-              cartItems.map((item) => <CartItem item={item} key={item.id} />)}
-          </ul>
+      {isItemsOnCart && (
+        <>
+          <div className={styles.cartContainer}>
+            <div>
+              <ul className={styles.table}>
+                {isItemsOnCart &&
+                  cartItems.map((item) => (
+                    <CartItem item={item} key={item.id} />
+                  ))}
+              </ul>
+            </div>
+            <CartCheckout />
+          </div>
+        </>
+      )}
+
+      {!isItemsOnCart && (
+        <div className={styles.noItems}>
+          <i className={`bi bi-basket3 ${styles.icon}`}></i>
+          <p className={styles.noItemsText}>
+            Nada por aqui por el momento, agrega articulos al carrito para poder
+            verlos aqui
+          </p>
         </div>
-        {isItemsOnCart && <CartCheckout />}
-      </div>
+      )}
       <Footer />
     </>
   );

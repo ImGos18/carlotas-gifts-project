@@ -9,13 +9,13 @@ export default function NavBar() {
       </NavLink>
       <ul className={styles.linkList}>
         <NavLink to={"/"} className={styles.linkItem}>
-          Home
+          Inicio
         </NavLink>
         <NavLink to={"/Catalog?filter=all-gifts"} className={styles.linkItem}>
-          Catalog
+          Catalogo
         </NavLink>
         <NavLink to={"/About"} className={styles.linkItem}>
-          About
+          Acerca de
         </NavLink>
       </ul>
       <div className={styles.cartProfile}>

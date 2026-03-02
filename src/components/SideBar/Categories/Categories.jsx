@@ -17,6 +17,7 @@ function Categories() {
         action={() => console.log("click")}
         onCategory={handleCategory}
         searchParams={searchParams}
+        nameCategory={"Todo"}
       />
       <ButtonCategory
         icon={"bi bi-flower3"}
@@ -24,6 +25,7 @@ function Categories() {
         action={() => console.log("click")}
         onCategory={handleCategory}
         searchParams={searchParams}
+        nameCategory={"Flores"}
       />
       <ButtonCategory
         icon={"bi bi-box2-heart"}
@@ -31,6 +33,7 @@ function Categories() {
         action={() => console.log("click")}
         onCategory={handleCategory}
         searchParams={searchParams}
+        nameCategory={"Cajas"}
       />
     </ul>
   );

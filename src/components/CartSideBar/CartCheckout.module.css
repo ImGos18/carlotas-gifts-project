@@ -1,0 +1,20 @@
+.checkoutContainer {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkoutBtn {
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  background-color: #ee2b6c;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}

@@ -4,7 +4,7 @@ import styles from "./SideBar.module.css";
 function SideBar() {
   return (
     <div className={styles.sideBar}>
-      <h3 className={styles.titleFilter}>Categories</h3>
+      <h3 className={styles.titleFilter}>Categorias</h3>
       <Categories />
     </div>
   );
