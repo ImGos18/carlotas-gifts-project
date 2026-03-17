@@ -46,3 +46,57 @@
   text-align: center;
   margin-top: 30px;
 }
+
+@media screen and (max-width: 570px) {
+  .itemCountDiv {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .itemCountDiv .inputCountItem {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .itemCountDiv button.actionButton {
+    background-color: #ee2b6c;
+    border: none;
+    width: 90px;
+    height: 60px;
+    color: #fff;
+    font-size: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .itemCountDiv input.inputStyle {
+    border-radius: 20px;
+    text-align: center;
+    font-size: 50px;
+    width: 160px;
+  }
+
+  .itemCountDiv .addToCart {
+    background-color: #ee2b6c;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .itemCountDiv .addToCart:global(.disabled) {
+    background-color: gray;
+  }
+
+  .message {
+    text-align: center;
+    margin-top: 30px;
+  }
+}

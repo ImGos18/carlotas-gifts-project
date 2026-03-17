@@ -4,7 +4,7 @@ import styles from "./HomePage.module.css";
 
 function HomePage() {
   return (
-    <div className="">
+    <div className={styles.body}>
       <NavBar />
       <div className={styles.PresentationContainer}>
         <h1 className={styles.title}>

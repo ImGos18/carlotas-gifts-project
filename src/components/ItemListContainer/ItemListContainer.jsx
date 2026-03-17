@@ -10,14 +10,7 @@ export default function ItemListContainer() {
   const [searchParams] = useSearchParams();
   const filter = searchParams.get("filter");
 
-  const {
-    modalDesc,
-    handleOpenModal,
-    handleCloseModal,
-    handleAddToCart,
-    itemsList,
-    getItemsDb,
-  } = useStoreContext();
+  const { handleOpenModal, itemsList, getItemsDb } = useStoreContext();
 
   useEffect(
     function () {
@@ -51,15 +44,6 @@ export default function ItemListContainer() {
           ))
         )}
       </ul>
-
-      {/* {modalDesc && (
-        <DetailsModal
-          item={modalDesc}
-          onCloseModal={handleCloseModal}
-          onAddItem={handleAddToCart}
-          key={modalDesc.id}
-        />
-      )} */}
     </>
   );
 }

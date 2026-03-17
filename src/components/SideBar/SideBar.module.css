@@ -8,3 +8,13 @@
 .sideBar .titleFilter {
   margin-bottom: 30px;
 }
+
+@media screen and (max-width: 570px) {
+  .sideBar {
+    width: 100vw;
+  }
+
+  .sideBar .titleFilter {
+    display: none;
+  }
+}

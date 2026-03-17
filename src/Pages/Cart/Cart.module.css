@@ -32,3 +32,17 @@
   font-weight: 800;
   color: gray;
 }
+
+@media screen and (max-width: 570px) {
+  .cartContainer .table {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 0;
+    height: 100%;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -10,3 +10,19 @@
   overflow-y: scroll;
   padding-bottom: 200px;
 }
+
+@media screen and (max-width: 570px) {
+  .itemContainer {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    width: 100vw;
+    padding-left: 0;
+    gap: 10%;
+    margin-left: 1px solid red;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-bottom: 100px;
+    align-items: center;
+  }
+}

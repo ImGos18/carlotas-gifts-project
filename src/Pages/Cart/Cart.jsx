@@ -16,14 +16,14 @@ function Cart() {
       {isItemsOnCart && (
         <>
           <div className={styles.cartContainer}>
-            <div>
+            <>
               <ul className={styles.table}>
                 {isItemsOnCart &&
                   cartItems.map((item) => (
                     <CartItem item={item} key={item.id} />
                   ))}
               </ul>
-            </div>
+            </>
             <CartCheckout />
           </div>
         </>

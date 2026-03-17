@@ -18,11 +18,28 @@
 }
 
 .title {
-  font-size: 90px;
+  font-size: 60px;
   width: 50%;
   text-align: center;
 }
 
 .presentationText {
   width: 40%;
+}
+
+@media screen and (max-width: 570px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .presentationText {
+    width: 100%;
+    text-align: center;
+  }
 }

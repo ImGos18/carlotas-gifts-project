@@ -58,3 +58,10 @@
 :global(.disabled) {
   filter: grayscale(100%);
 }
+
+@media screen and (max-width: 570px) {
+  .item {
+    padding-bottom: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.411);
+  }
+}

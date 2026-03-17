@@ -36,3 +36,24 @@
 .ItemView:global(.loading) {
   height: 70vh;
 }
+
+@media screen and (max-width: 570px) {
+  .ItemView {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 40px auto;
+    margin-bottom: 2rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10rem;
+    text-align: center;
+  }
+
+  .ItemView .image {
+    width: 60%;
+    border-radius: 20px;
+  }
+}

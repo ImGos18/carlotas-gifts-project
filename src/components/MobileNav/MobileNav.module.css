@@ -1,0 +1,59 @@
+.navLogo {
+  width: 30%;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.navMobile {
+  display: flex;
+  flex-direction: row;
+}
+
+.navLogoContainer {
+  display: flex;
+}
+
+.linkItem {
+  cursor: pointer;
+  color: grey;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.linkItem:hover {
+  color: #ee2b6c;
+}
+
+.linkItem:global(.active) {
+  color: #ee2b6c;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 20%;
+}
+
+.navToggleBtn {
+  background-color: #fff;
+}
+
+.navToggleBtnIcon {
+  font-size: 40px;
+}
+
+.navMenu {
+  background-color: rgba(255, 255, 255, 0.849);
+}
+
+.navBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homeLink {
+  box-sizing: border-box;
+}

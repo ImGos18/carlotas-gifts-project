@@ -8,3 +8,16 @@
 .categoryNav {
   text-decoration: none;
 }
+
+@media screen and (max-width: 570px) {
+  .categoryList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    padding-left: 0;
+    gap: 0px;
+    margin-bottom: 0;
+    justify-content: center;
+  }
+}

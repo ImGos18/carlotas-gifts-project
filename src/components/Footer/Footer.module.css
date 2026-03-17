@@ -16,3 +16,9 @@
   width: 5rem;
   justify-self: flex-start;
 }
+
+@media screen and (max-width: 570px) {
+  .footer p {
+    display: none;
+  }
+}
